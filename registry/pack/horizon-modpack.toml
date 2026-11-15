@@ -1,0 +1,22 @@
+format = 1
+id = "webdisplays_pack"
+name = "WebDisplays Pack"
+version = "0.1.0"
+description = "WebDisplays and what it needs: the blocks and items, the code and the HCEF browser."
+authors = ["J8-Diablo"]
+game = "26.3"
+
+[[mods]]
+id = "hcef"
+version = "0.1.0"
+sha256 = "bbf677eb2e3a99526a4cc2c1ddb92d09c6117aeaf7f149c1fb7dfb4252b098fa"
+
+[[mods]]
+id = "webdisplays_native"
+version = "0.1.0"
+sha256 = "7f7f88636463c1492026fe87e54591042ba22cd577eb53a3f5b09f2c7957a0c2"
+
+[[mods]]
+id = "webdisplays"
+version = "0.1.0"
+sha256 = "cbdf8d7021c9ee7a5bd3a60ee4f21eed520703f42cb22f5db74527b3feaa79e0"

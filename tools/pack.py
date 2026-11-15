@@ -44,6 +44,14 @@ def pack_content(out_dir):
     return out
 
 
+def put(z, name, data):
+    """Adds a file with a fixed time: the same sources pack to the same bytes, so a SHA-256
+    someone pinned (a registry entry, a modpack) stays the file's."""
+    info = zipfile.ZipInfo(name, date_time=(2026, 1, 1, 0, 0, 0))
+    info.compress_type = zipfile.ZIP_DEFLATED
+    z.writestr(info, data)
+
+
 def pack_native(out_dir, mixins):
     source = os.path.join(HERE, "native")
     manifest = open(os.path.join(source, "horizon-mixin.toml"), encoding="utf-8").read()
@@ -55,7 +63,7 @@ def pack_native(out_dir, mixins):
         header = {"schema": 1, "id": mod_id, "version": version, "game": "26.3", "horizon": horizon}
         if mixins:
             header["mixins"] = mixins
-        z.writestr("horizon-native.json", json.dumps(header, indent=2, sort_keys=True) + "\n")
+        put(z, "horizon-native.json", (json.dumps(header, indent=2, sort_keys=True) + "\n").encode("utf-8"))
         for root, dirs, files in os.walk(source):
             # Not the build output, nor what tools/check.sh stages (native/.check).
             dirs[:] = sorted(d for d in dirs if d != "target" and not d.startswith("."))
@@ -64,7 +72,8 @@ def pack_native(out_dir, mixins):
                 if name.endswith((".rs", ".toml")):
                     path = os.path.join(root, name)
                     rel = os.path.relpath(path, source).replace(os.sep, "/")
-                    z.write(path, "mixins/%s/%s" % (mod_id, rel))
+                    with open(path, "rb") as f:
+                        put(z, "mixins/%s/%s" % (mod_id, rel), f.read())
     return out
 
 
@@ -81,7 +90,9 @@ def main():
     parser = argparse.ArgumentParser(description="Packs WebDisplays for Horizon.")
     parser.add_argument("--out", default=os.path.join(HERE, "dist"))
     parser.add_argument("--install", metavar="INSTANCE_FOLDER")
-    parser.add_argument("--mixins", default="", help="the horizon-mixins commit the native mod was checked against")
+    # The registry refuses a bundle that does not name its horizon-mixins commit. This is the one
+    # the launcher uses for the pinned Horizon revision, which the mod was built and tested with.
+    parser.add_argument("--mixins", default="5a64af938ec86b00d53d16a408aabc0038fb3e57", help="the horizon-mixins commit the native mod was checked against")
     args = parser.parse_args()
     os.makedirs(args.out, exist_ok=True)
     content = pack_content(args.out)
