@@ -14,7 +14,7 @@ sha256 = "bbf677eb2e3a99526a4cc2c1ddb92d09c6117aeaf7f149c1fb7dfb4252b098fa"
 [[mods]]
 id = "webdisplays_native"
 version = "0.1.0"
-sha256 = "7f7f88636463c1492026fe87e54591042ba22cd577eb53a3f5b09f2c7957a0c2"
+sha256 = "56d008a420b112cb78773dbd36e15e2d341b6c77b4ca0b9d4f93865035fcf115"
 
 [[mods]]
 id = "webdisplays"

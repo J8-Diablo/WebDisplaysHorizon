@@ -73,7 +73,8 @@ def pack_native(out_dir, mixins):
                     path = os.path.join(root, name)
                     rel = os.path.relpath(path, source).replace(os.sep, "/")
                     with open(path, "rb") as f:
-                        put(z, "mixins/%s/%s" % (mod_id, rel), f.read())
+                        # With LF, whatever the checkout has: line endings must not change the bundle.
+                        put(z, "mixins/%s/%s" % (mod_id, rel), f.read().replace(b"\r\n", b"\n"))
     return out
 
 

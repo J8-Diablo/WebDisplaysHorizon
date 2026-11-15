@@ -5,7 +5,7 @@ What to type in the Horizon mods form (playhorizon.dev/mods/submit). Submit it a
 | Field | Value |
 |---|---|
 | Kind | Native mod (.hnmod) |
-| File | `dist/webdisplays_native.hnmod` (SHA-256 `7f7f8863…`, from `python -I tools/pack.py`) |
+| File | `dist/webdisplays_native.hnmod` (SHA-256 `56d008a4…`, from `python -I tools/pack.py`) |
 | Id | `webdisplays_native` |
 | Version | `0.1.0` |
 | Game | `26.3` |
