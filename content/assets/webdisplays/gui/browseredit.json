@@ -1,0 +1,79 @@
+{
+ "controls": [
+  {
+   "type": "Label",
+   "label": "$webdisplays.gui.browseredit.name",
+   "x": 0,
+   "y": 2,
+   "shadowed": true
+  },
+  {
+   "type": "TextField",
+   "name": "tfBrowserName",
+   "x": 70,
+   "y": 0,
+   "width": 180,
+   "maxLength": 32
+  },
+  {
+   "type": "Label",
+   "label": "$webdisplays.gui.browseredit.url",
+   "x": 0,
+   "y": 26,
+   "shadowed": true
+  },
+  {
+   "type": "TextField",
+   "name": "tfBrowserUrl",
+   "x": 0,
+   "y": 38,
+   "width": 250,
+   "maxLength": 512
+  },
+  {
+   "type": "Label",
+   "label": "$webdisplays.gui.browseredit.resolution",
+   "x": 0,
+   "y": 66
+  },
+  {
+   "type": "TextField",
+   "name": "tfBrowserResX",
+   "x": 70,
+   "y": 64,
+   "width": 44,
+   "maxLength": 5
+  },
+  {
+   "type": "Label",
+   "label": "x",
+   "x": 118,
+   "y": 66
+  },
+  {
+   "type": "TextField",
+   "name": "tfBrowserResY",
+   "x": 128,
+   "y": 64,
+   "width": 44,
+   "maxLength": 5
+  },
+  {
+   "type": "Button",
+   "name": "btnCancel",
+   "label": "$webdisplays.gui.seturl.cancel",
+   "x": 0,
+   "y": 92,
+   "width": 122
+  },
+  {
+   "type": "Button",
+   "name": "btnOk",
+   "label": "$webdisplays.gui.seturl.ok",
+   "x": 128,
+   "y": 92,
+   "width": 122
+  }
+ ],
+ "center": true
+}

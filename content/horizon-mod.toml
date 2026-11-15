@@ -1,0 +1,10 @@
+id = "webdisplays"
+name = "WebDisplays"
+version = "0.1.0"
+description = "Web browsers on screens in the world."
+authors = ["montoyo", "CinemaMod Group", "J8-Diablo"]
+# A content mod: blocks, items and their assets, no code (API 0.2). The behaviour (the
+# browsers, the screens' logic, the sound) is the native mod's, in ../native.
+api = "0.2"
+side = "both"
+capabilities = ["registries"]

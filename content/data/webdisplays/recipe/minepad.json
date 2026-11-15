@@ -1,0 +1,20 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "key": {
+  "B": "minecraft:blue_dye",
+  "C": "webdisplays:craftcomp_batpack",
+  "D": "minecraft:diamond",
+  "G": "minecraft:green_dye",
+  "P": "minecraft:glass_pane",
+  "R": "minecraft:red_dye"
+ },
+ "pattern": [
+  "PPP",
+  "RGB",
+  "DCD"
+ ],
+ "result": {
+  "id": "webdisplays:minepad"
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "variants": {
+  "facing=south": {
+   "model": "webdisplays:block/kb_right"
+  },
+  "facing=west": {
+   "model": "webdisplays:block/kb_right",
+   "y": 90
+  },
+  "facing=north": {
+   "model": "webdisplays:block/kb_right",
+   "y": 180
+  },
+  "facing=east": {
+   "model": "webdisplays:block/kb_right",
+   "y": 270
+  }
+ }
+}

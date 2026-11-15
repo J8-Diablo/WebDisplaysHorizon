@@ -1,0 +1,21 @@
+# For `cargo test` only: the mod's modules that need neither the game nor a window, taken
+# straight from native/api/src by `#[path]`. They compile in seconds here, where the mod's
+# own crate has to build Horizon first. Nothing ships from this crate.
+#
+#   cargo test --manifest-path tools/dev-logic/Cargo.toml
+[package]
+name = "webdisplays-dev-logic"
+version = "0.0.0"
+edition = "2024"
+publish = false
+
+[lib]
+path = "lib.rs"
+
+# The same crates, at the same versions, as native/api/Cargo.toml gives these modules.
+[dependencies]
+url = "=2.5.8"
+
+# HCEF, the browser mod this one depends on: its game-free modules under its own name
+# (the repository is expected beside this one).
+hcef = { package = "hcef-dev-logic", path = "../../../HCEF/tools/dev-logic" }

@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "key": {
+  "B": "minecraft:stone_button",
+  "G": "minecraft:glowstone_dust",
+  "S": "minecraft:stick"
+ },
+ "pattern": [
+  "  G",
+  " S ",
+  "B  "
+ ],
+ "result": {
+  "id": "webdisplays:screenpen"
+ }
+}

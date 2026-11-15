@@ -1,0 +1,34 @@
+{
+ "display": {
+  "icon": {
+   "id": "webdisplays:minepad"
+  },
+  "title": {
+   "translate": "advancements.webdisplays.padbreak.title"
+  },
+  "description": {
+   "translate": "advancements.webdisplays.padbreak.description"
+  },
+  "frame": "task"
+ },
+ "parent": "webdisplays:root",
+ "criteria": {
+  "pad_break": {
+   "trigger": "webdisplays:pad_break"
+  }
+ },
+ "requirements": [
+  [
+   "pad_break"
+  ]
+ ],
+ "rewards": {
+  "recipes": [
+   "webdisplays:extcard",
+   "webdisplays:upgrade",
+   "webdisplays:laserdiode",
+   "webdisplays:laserpointer",
+   "webdisplays:upgrade_laser"
+  ]
+ }
+}

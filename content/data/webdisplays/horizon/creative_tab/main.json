@@ -1,0 +1,28 @@
+{
+ "title": "itemGroup.webdisplays",
+ "icon": "webdisplays:screen",
+ "items": [
+  "webdisplays:screen",
+  "webdisplays:keyboard",
+  "webdisplays:linker",
+  "webdisplays:screenpen",
+  "webdisplays:rctrl",
+  "webdisplays:redctrl",
+  "webdisplays:speaker_tweeter",
+  "webdisplays:speaker_bass",
+  "webdisplays:speaker_mix",
+  "webdisplays:ownerthief",
+  "webdisplays:screencfg",
+  "webdisplays:minepad",
+  "webdisplays:laserpointer",
+  "webdisplays:upgrade_lasermouse",
+  "webdisplays:craftcomp_stonekey",
+  "webdisplays:craftcomp_upgrade",
+  "webdisplays:craftcomp_peripheral",
+  "webdisplays:craftcomp_batcell",
+  "webdisplays:craftcomp_batpack",
+  "webdisplays:craftcomp_laserdiode",
+  "webdisplays:craftcomp_backlight",
+  "webdisplays:craftcomp_extcard"
+ ]
+}

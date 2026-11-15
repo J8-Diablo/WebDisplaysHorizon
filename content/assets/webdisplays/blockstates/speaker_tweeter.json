@@ -1,0 +1,27 @@
+{
+ "variants": {
+  "facing=north": {
+   "model": "webdisplays:block/speaker_tweeter"
+  },
+  "facing=east": {
+   "model": "webdisplays:block/speaker_tweeter",
+   "y": 90
+  },
+  "facing=south": {
+   "model": "webdisplays:block/speaker_tweeter",
+   "y": 180
+  },
+  "facing=west": {
+   "model": "webdisplays:block/speaker_tweeter",
+   "y": 270
+  },
+  "facing=up": {
+   "model": "webdisplays:block/speaker_tweeter",
+   "x": 270
+  },
+  "facing=down": {
+   "model": "webdisplays:block/speaker_tweeter",
+   "x": 90
+  }
+ }
+}

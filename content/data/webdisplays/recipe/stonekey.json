@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "key": {
+  "P": "minecraft:stone_pressure_plate"
+ },
+ "pattern": [
+  "P"
+ ],
+ "result": {
+  "id": "webdisplays:craftcomp_stonekey",
+  "count": 9
+ }
+}

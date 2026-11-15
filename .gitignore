@@ -1,0 +1,29 @@
+# Rust build output
+target/
+
+# Copied from Horizon by tools/check.sh; the launcher builds with its own.
+/native/api/Cargo.lock
+/tools/dev-logic/Cargo.lock
+
+# Packed mods
+*.hmod
+*.hnmod
+
+# CEF binaries and the browser profile (downloaded or built, never committed)
+/host/cef/
+/host/dist/
+*.pak
+*.dll
+*.bin
+*.dat
+
+# Editors and OS
+.vscode/
+.idea/
+__pycache__/
+*.pyc
+Thumbs.db
+dist/
+
+# tools/check.sh stages the manifest with the HCEF dependency here.
+/native/.check/

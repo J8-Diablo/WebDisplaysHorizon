@@ -1,0 +1,15 @@
+{
+ "values": [
+  "webdisplays:kb_left",
+  "webdisplays:kb_right",
+  "webdisplays:polyscreen",
+  "webdisplays:polyscreen_core",
+  "webdisplays:rctrl",
+  "webdisplays:redctrl",
+  "webdisplays:screen",
+  "webdisplays:screen_core",
+  "webdisplays:speaker_bass",
+  "webdisplays:speaker_mix",
+  "webdisplays:speaker_tweeter"
+ ]
+}

@@ -1,0 +1,275 @@
+{
+ "controls": [
+  {
+   "type": "Label",
+   "label": "$webdisplays.gui.seturl.name",
+   "x": 0,
+   "y": 6,
+   "shadowed": true
+  },
+  {
+   "type": "TextField",
+   "name": "tfName",
+   "x": 58,
+   "y": 0,
+   "width": 152,
+   "maxLength": 32
+  },
+  {
+   "type": "Label",
+   "label": "$webdisplays.gui.seturl.url",
+   "x": 0,
+   "y": 26,
+   "shadowed": true
+  },
+  {
+   "type": "TextField",
+   "name": "tfURL",
+   "x": 0,
+   "y": 38,
+   "width": 188,
+   "maxLength": 65535
+  },
+  {
+   "type": "YTButton",
+   "x": 190,
+   "y": 39,
+   "width": 20,
+   "urlField": "tfURL"
+  },
+  {
+   "type": "Label",
+   "label": "$webdisplays.gui.seturl.volume",
+   "x": 0,
+   "y": 70
+  },
+  {
+   "type": "TextField",
+   "name": "tfVolume",
+   "x": 58,
+   "y": 64,
+   "width": 34,
+   "maxLength": 3
+  },
+  {
+   "type": "Label",
+   "label": "%",
+   "x": 94,
+   "y": 70
+  },
+  {
+   "type": "CheckBox",
+   "name": "cbAutoVolume",
+   "label": "$webdisplays.gui.seturl.autovolume",
+   "x": 108,
+   "y": 67
+  },
+  {
+   "type": "Label",
+   "label": "$webdisplays.gui.screencfg.resolution",
+   "x": 0,
+   "y": 96
+  },
+  {
+   "type": "TextField",
+   "name": "tfResX",
+   "x": 58,
+   "y": 90,
+   "width": 38,
+   "maxLength": 5
+  },
+  {
+   "type": "Label",
+   "label": "x",
+   "x": 99,
+   "y": 96
+  },
+  {
+   "type": "TextField",
+   "name": "tfResY",
+   "x": 107,
+   "y": 90,
+   "width": 38,
+   "maxLength": 5
+  },
+  {
+   "type": "Button",
+   "name": "btnSetRes",
+   "x": 149,
+   "y": 90,
+   "width": 61,
+   "label": "$webdisplays.gui.screencfg.setres.short"
+  },
+  {
+   "type": "CheckBox",
+   "name": "cbOled",
+   "label": "$webdisplays.gui.seturl.oled",
+   "x": 0,
+   "y": 118
+  },
+  {
+   "type": "CheckBox",
+   "name": "cbCurved",
+   "label": "$webdisplays.gui.seturl.curved",
+   "x": 0,
+   "y": 138
+  },
+  {
+   "type": "Button",
+   "name": "btnFlip",
+   "x": 124,
+   "y": 134,
+   "width": 86,
+   "label": "$webdisplays.gui.seturl.flip"
+  },
+  {
+   "type": "Label",
+   "label": "$webdisplays.gui.seturl.linkid",
+   "x": 0,
+   "y": 162
+  },
+  {
+   "type": "TextField",
+   "name": "tfLinkId",
+   "x": 26,
+   "y": 156,
+   "width": 84,
+   "maxLength": 64
+  },
+  {
+   "type": "Button",
+   "name": "btnLinkMode",
+   "x": 114,
+   "y": 156,
+   "width": 96,
+   "label": "$webdisplays.gui.seturl.linkmode.joined"
+  },
+  {
+   "type": "Button",
+   "name": "btnLink",
+   "x": 0,
+   "y": 182,
+   "width": 103,
+   "label": "$webdisplays.gui.seturl.link.sync"
+  },
+  {
+   "type": "Button",
+   "name": "btnRefreshBrowser",
+   "x": 107,
+   "y": 182,
+   "width": 103,
+   "label": "$webdisplays.gui.seturl.refresh"
+  },
+  {
+   "type": "Label",
+   "name": "lblBrowserBinding",
+   "label": "$webdisplays.gui.seturl.browser.none",
+   "x": 0,
+   "y": 208
+  },
+  {
+   "type": "Label",
+   "label": "$webdisplays.gui.seturl.screens",
+   "x": 220,
+   "y": 0,
+   "shadowed": true
+  },
+  {
+   "type": "List",
+   "name": "lstScreens",
+   "x": 220,
+   "y": 11,
+   "width": 214,
+   "height": 76,
+   "multiSelect": true
+  },
+  {
+   "type": "Button",
+   "name": "btnJoinSelection",
+   "x": 220,
+   "y": 90,
+   "width": 104,
+   "label": "$webdisplays.gui.seturl.join"
+  },
+  {
+   "type": "Button",
+   "name": "btnUnjoin",
+   "x": 330,
+   "y": 90,
+   "width": 104,
+   "label": "$webdisplays.gui.seturl.unjoin"
+  },
+  {
+   "type": "Label",
+   "label": "$webdisplays.gui.seturl.browsers",
+   "x": 220,
+   "y": 116,
+   "shadowed": true
+  },
+  {
+   "type": "List",
+   "name": "lstBrowsers",
+   "x": 220,
+   "y": 127,
+   "width": 214,
+   "height": 42
+  },
+  {
+   "type": "Button",
+   "name": "btnBrowserNew",
+   "x": 220,
+   "y": 172,
+   "width": 68,
+   "label": "$webdisplays.gui.seturl.browser.new"
+  },
+  {
+   "type": "Button",
+   "name": "btnBrowserEdit",
+   "x": 293,
+   "y": 172,
+   "width": 68,
+   "label": "$webdisplays.gui.seturl.browser.edit"
+  },
+  {
+   "type": "Button",
+   "name": "btnBrowserDelete",
+   "x": 366,
+   "y": 172,
+   "width": 68,
+   "label": "$webdisplays.gui.seturl.browser.delete"
+  },
+  {
+   "type": "Button",
+   "name": "btnBrowserAssign",
+   "x": 220,
+   "y": 194,
+   "width": 104,
+   "label": "$webdisplays.gui.seturl.browser.assign"
+  },
+  {
+   "type": "Button",
+   "name": "btnBrowserDetach",
+   "x": 330,
+   "y": 194,
+   "width": 104,
+   "label": "$webdisplays.gui.seturl.browser.detach"
+  },
+  {
+   "type": "Button",
+   "name": "btnCancel",
+   "label": "$webdisplays.gui.seturl.cancel",
+   "x": 0,
+   "y": 224,
+   "width": 210
+  },
+  {
+   "type": "Button",
+   "name": "btnOk",
+   "label": "$webdisplays.gui.seturl.ok",
+   "x": 220,
+   "y": 224,
+   "width": 214
+  }
+ ],
+ "center": true
+}

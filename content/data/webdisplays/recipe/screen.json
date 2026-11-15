@@ -1,0 +1,20 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "redstone",
+ "key": {
+  "B": "minecraft:blue_dye",
+  "G": "minecraft:green_dye",
+  "L": "webdisplays:craftcomp_backlight",
+  "P": "minecraft:glass_pane",
+  "R": "minecraft:red_dye"
+ },
+ "pattern": [
+  "PPP",
+  "RGB",
+  "LLL"
+ ],
+ "result": {
+  "id": "webdisplays:screen",
+  "count": 8
+ }
+}

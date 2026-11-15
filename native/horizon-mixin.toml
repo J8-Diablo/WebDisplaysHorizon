@@ -1,0 +1,18 @@
+# WebDisplays: the code half of the mod, a native trait mod (docs/native-mods.md, "Trait mods").
+# The blocks, items and assets are the content mod's (../content, webdisplays.hmod).
+# Build it with
+# `horizon-launcher native-build <this folder> --instance <instance> --trust-native-code`.
+[mod]
+id = "webdisplays_native"
+version = "0.1.0"
+
+[compatibility]
+horizon_revision = "fdc87aecdbd116bf1e08adcd062fcbaea8c2e2ca"
+
+[api]
+path = "api"
+
+# The browser: HCEF starts it, keeps the link to it and downloads it (its own mod, as MCEF
+# is for the Java version). The launcher makes it the crate `hcef` of this mod's package.
+[dependencies]
+hcef = "^0.1"

@@ -1,0 +1,16 @@
+[package]
+name = "webdisplays-native"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+# The launcher points this at the Horizon source it builds the game from. Any other
+# dependency must be a crate and version in Horizon's Cargo.lock.
+horizon-client = { git = "https://github.com/horizon-rust/horizon", rev = "fdc87aecdbd116bf1e08adcd062fcbaea8c2e2ca" }
+# Reads addresses as Chromium does, which the blacklist depends on (model/url.rs).
+url = "2.5"
+# The clipboard, for the mod's own text fields: the game hands a mod none.
+arboard = { version = "3.7", default-features = false }
+
+# `hcef` (the browser mod this one depends on) is added here by the launcher, from
+# `[dependencies]` in ../horizon-mixin.toml; tools/check.sh adds it the same way.

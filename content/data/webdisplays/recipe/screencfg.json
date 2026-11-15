@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "key": {
+  "D": "minecraft:diamond",
+  "P": "minecraft:glass_pane",
+  "T": "minecraft:redstone_torch"
+ },
+ "pattern": [
+  "T T",
+  "PDP",
+  "PPP"
+ ],
+ "result": {
+  "id": "webdisplays:screencfg"
+ }
+}

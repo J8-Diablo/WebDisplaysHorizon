@@ -1,0 +1,26 @@
+{
+ "template": "minecraft:barrier",
+ "properties": {
+  "hardness": 1.5,
+  "explosion_resistance": 10.0,
+  "sounds": "minecraft:stone",
+  "map_color": 11,
+  "light": 0,
+  "requires_tool": true,
+  "render_shape": "INVISIBLE",
+  "occludes": false
+ },
+ "shapes": {
+  "default": [
+   [
+    0,
+    0,
+    0,
+    1,
+    1,
+    1
+   ]
+  ]
+ },
+ "item": false
+}
