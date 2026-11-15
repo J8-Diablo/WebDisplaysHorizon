@@ -27,10 +27,15 @@ INSTANCE="${WD_INSTANCE:-webdisplays-dev}"
 HCEF="${HCEF_REPO:-$(dirname "$HERE")/HCEF}"
 WORK="$HERE/target/dev"
 
-# Copies the native mod of the repository $1 to $2: its manifest and its package's sources.
+# Copies the native mod of the repository $1 to $2: its manifest, its package's sources, the
+# helpers of its injections and its data/ folder, when it has some.
 stage() {
   mkdir -p "$2/api" || return 1
-  cp "$1/native/horizon-mixin.toml" "$2/" && cp "$1/native/api/Cargo.toml" "$2/api/" && cp -r "$1/native/api/src" "$2/api/src"
+  cp "$1/native/horizon-mixin.toml" "$2/" && cp "$1/native/api/Cargo.toml" "$2/api/" && cp -r "$1/native/api/src" "$2/api/src" || return 1
+  for f in "$1"/native/*.rs; do
+    [ -f "$f" ] && { cp "$f" "$2/" || return 1; }
+  done
+  [ ! -d "$1/native/data" ] || cp -r "$1/native/data" "$2/data"
 }
 
 case "$1" in

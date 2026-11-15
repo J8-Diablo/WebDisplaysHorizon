@@ -5,8 +5,13 @@ usage: python -I tools/pack.py [--out DIR] [--install INSTANCE_FOLDER] [--mixins
 Writes into DIR (default: dist/ at the repository's root):
 
   webdisplays.hmod          the content mod: `content/` zipped, `horizon-mod.toml` at its root
-  webdisplays_native.hnmod  the native mod's source (.rs and .toml only), which the launcher
-                            compiles into the game (`horizon-launcher native-build`)
+  webdisplays_native.hnmod  the native mod's source (.rs and .toml) and its data/, which the
+                            launcher compiles into the game (`horizon-launcher native-build`)
+
+The native mod is the whole mod in one file: the content mod rides inside it. So this also
+writes the content mod to native/data/webdisplays-content.hmod, which the bundle carries and
+native/embedded_content.rs compiles in. That copy is committed: a build from the repository's
+folder needs it. webdisplays.hmod alone is for an instance that wants the content apart.
 
 With --install, the content mod is also copied into the instance's `horizon-mods/`.
 
@@ -38,9 +43,18 @@ def zip_tree(source, out, prefix=""):
                     z.writestr(info, f.read())
 
 
+EMBEDDED = os.path.join(HERE, "native", "data", "webdisplays-content.hmod")
+
+
 def pack_content(out_dir):
     out = os.path.join(out_dir, "webdisplays.hmod")
     zip_tree(os.path.join(HERE, "content"), out)
+    # The copy the native mod compiles in (native/embedded_content.rs): the same bytes.
+    os.makedirs(os.path.dirname(EMBEDDED), exist_ok=True)
+    data = open(out, "rb").read()
+    if not os.path.isfile(EMBEDDED) or open(EMBEDDED, "rb").read() != data:
+        with open(EMBEDDED, "wb") as f:
+            f.write(data)
     return out
 
 
@@ -68,10 +82,13 @@ def pack_native(out_dir, mixins):
             # Not the build output, nor what tools/check.sh stages (native/.check).
             dirs[:] = sorted(d for d in dirs if d != "target" and not d.startswith("."))
             for name in sorted(files):
-                # A bundle holds .rs and .toml files only.
-                if name.endswith((".rs", ".toml")):
-                    path = os.path.join(root, name)
-                    rel = os.path.relpath(path, source).replace(os.sep, "/")
+                path = os.path.join(root, name)
+                rel = os.path.relpath(path, source).replace(os.sep, "/")
+                # A bundle holds .rs and .toml files, and the files of its data/ folder as they are.
+                if rel.startswith("data/"):
+                    with open(path, "rb") as f:
+                        put(z, "mixins/%s/%s" % (mod_id, rel), f.read())
+                elif name.endswith((".rs", ".toml")):
                     with open(path, "rb") as f:
                         # With LF, whatever the checkout has: line endings must not change the bundle.
                         put(z, "mixins/%s/%s" % (mod_id, rel), f.read().replace(b"\r\n", b"\n"))

@@ -1,3 +1,7 @@
 # LF everywhere, on every system: the packed mods' SHA-256 are pinned (registry, modpack),
 # and a checkout with other line endings would pack other bytes.
 * text=auto eol=lf
+*.hmod binary
+*.hpack binary
+*.png binary
+*.ogg binary

@@ -27,3 +27,7 @@ dist/
 
 # tools/check.sh stages the manifest with the HCEF dependency here.
 /native/.check/
+
+# The content mod the native mod carries (tools/pack.py writes it): committed, because a build
+# from this folder compiles it in.
+!/native/data/*.hmod

@@ -1,5 +1,6 @@
-# WebDisplays: the code half of the mod, a native trait mod (docs/native-mods.md, "Trait mods").
-# The blocks, items and assets are the content mod's (../content, webdisplays.hmod).
+# WebDisplays: a native trait mod (docs/native-mods.md, "Trait mods"), and the whole mod in
+# one file. The blocks, items and assets are a content mod (../content) that rides inside this
+# bundle, in data/ (see the injection below).
 # Build it with
 # `horizon-launcher native-build <this folder> --instance <instance> --trust-native-code`.
 [mod]
@@ -16,3 +17,18 @@ path = "api"
 # is for the Java version). The launcher makes it the crate `hcef` of this mod's package.
 [dependencies]
 hcef = "^0.1"
+
+# The content mod (blocks, items, recipes, textures, sounds, text) rides inside this bundle,
+# data/webdisplays-content.hmod, so that the mod is one file to install: the game's list of
+# content mods gets it as a development mod (written once to .horizon-cache).
+[[injection]]
+id = "embedded-content"
+kind = "HEAD"
+cancellable = true
+target = "horizon_client::game::mods::content_root"
+helper = "embedded_content.rs"
+bindings = [
+  { name = "root", ty = "&std::path::Path", value = "root" },
+  { name = "enabled", ty = "&std::collections::BTreeSet<String>", value = "enabled" },
+  { name = "dev", ty = "&[std::path::PathBuf]", value = "dev" },
+]
